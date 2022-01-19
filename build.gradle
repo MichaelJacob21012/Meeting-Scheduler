@@ -1,0 +1,66 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Apply the application plugin to add support for building an application
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+version '1.0-SNAPSHOT'
+
+
+sourceCompatibility = 1.8
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    version = "11.0.2"
+}
+
+
+sourceSets.main {
+    java {
+        srcDir 'src/main/java'
+    }
+    resources {
+        srcDirs = ['src/main/java', 'src/main/resources']
+        exclude "**/*.java"
+    }
+}
+
+
+repositories {
+    jcenter()
+    mavenCentral()
+    //maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+
+dependencies {
+    // This dependency is found on compile classpath of this component and consumers.
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.17'
+    compile group: 'org.openjfx', name: 'javafx-controls', version: '11'
+    compile group: 'no.tornado', name: 'tornadofx-controls', version: '1.0.6'
+    // https://mvnrepository.com/artifact/com.calendarfx/view
+    compile ('com.calendarfx:view:11.8.3') { exclude group: 'org.openjfx', module: '' }
+    compile group: 'org.controlsfx', name: 'controlsfx', version: '11.0.1'
+    // https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils
+    compile group: 'commons-dbutils', name: 'commons-dbutils', version: '1.6'
+    // https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp
+    compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+    compile group: 'javax.mail', name: 'mail', version: '1.4'
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+
+
+}
+
+
+
+run {
+    jvmArgs = ['--add-exports=javafx.base/com.sun.javafx.event=ALL-UNNAMED']
+
+}
+
+
+mainClassName = 'application.Main'

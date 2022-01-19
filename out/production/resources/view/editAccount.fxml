@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditAccountController">
+    <children>
+        <AnchorPane prefHeight="500.0" prefWidth="650.0">
+            <children>
+                <MenuBar fx:id="adminMenuBar" prefHeight="25.0" prefWidth="650.0">
+                    <menus>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyCalendar" text="My Calendar" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToAddMeeting" text="Add Meeting" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToInvites" text="My Invites" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyAccount" text="My Account" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Accounts">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToAddAccount" text="Add Account" />
+                                <MenuItem mnemonicParsing="false" onAction="#goToAccounts" text="Accounts List" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Rooms">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToAddRoom" text="Add Room" />
+                                <MenuItem mnemonicParsing="false" onAction="#goToRooms" text="Rooms List" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Locations">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToAddLocation" text="Add Location" />
+                                <MenuItem mnemonicParsing="false" onAction="#goToLocations" text="Locations List" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" onAction="#goToBatch">
+                            <graphic>
+                                <Label onMouseClicked="#goToBatch" text="Batch" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#logout" text="Logout" />
+                            </graphic>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <MenuBar fx:id="normalMenuBar" prefHeight="25.0" prefWidth="650.0">
+                    <menus>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyCalendar" text="My Calendar" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToAddMeeting" text="Add Meeting" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToInvites" text="My Invites" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyAccount" text="My Account" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToRooms" text="Rooms" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#logout" text="Logout" />
+                            </graphic>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <Button fx:id="submitButton" layoutX="62.0" layoutY="376.0" mnemonicParsing="false" onMouseClicked="#submit" prefHeight="16.0" prefWidth="131.0" text="Submit" />
+            <TextField fx:id="firstNameField" layoutX="128.0" layoutY="69.0" prefHeight="37.0" prefWidth="223.0" promptText="First Name" />
+            <TextField fx:id="surnameField" layoutX="127.0" layoutY="142.0" prefHeight="37.0" prefWidth="223.0" promptText="Surname" />
+            <TextField fx:id="emailField" layoutX="127.0" layoutY="225.0" prefHeight="37.0" prefWidth="223.0" promptText="Email" />
+            <CheckBox fx:id="adminBox" layoutX="127.0" layoutY="309.0" mnemonicParsing="false" text="Admin" />
+            <Label layoutX="29.0" layoutY="79.0" text="First Name" />
+            <Label layoutX="29.0" layoutY="235.0" text="Email" />
+            <Label layoutX="29.0" layoutY="152.0" text="Surname" />
+            <Button layoutX="251.0" layoutY="376.0" mnemonicParsing="false" onAction="#goToChangePassword" prefHeight="25.0" prefWidth="131.0" text="Change Password" />
+            <Label fx:id="emailErrorLabel" layoutX="375.0" layoutY="235.0" prefHeight="17.0" prefWidth="212.0" textFill="#eb0404" />
+            <Label fx:id="surnameErrorLabel" layoutX="375.0" layoutY="152.0" prefHeight="17.0" prefWidth="212.0" textFill="#eb0404" />
+            <Label fx:id="firstNameErrorLabel" layoutX="375.0" layoutY="79.0" prefHeight="17.0" prefWidth="212.0" textFill="#eb0404" />
+            <Button layoutX="431.0" layoutY="376.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="16.0" prefWidth="131.0" text="Refresh" />
+            </children>
+        </AnchorPane>
+    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

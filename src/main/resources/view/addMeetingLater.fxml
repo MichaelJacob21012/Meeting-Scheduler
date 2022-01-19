@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddMeetingLaterController">
+    <children>
+        <AnchorPane prefHeight="500.0" prefWidth="650.0">
+            <children>
+                <MenuBar fx:id="adminMenuBar" prefHeight="25.0" prefWidth="650.0">
+                    <menus>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyCalendar" text="My Calendar" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToAddMeeting" text="Add Meeting" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToInvites" text="My Invites" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyAccount" text="My Account" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Accounts">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToAddAccount" text="Add Account" />
+                                <MenuItem mnemonicParsing="false" onAction="#goToAccounts" text="Accounts List" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Rooms">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToAddRoom" text="Add Room" />
+                                <MenuItem mnemonicParsing="false" onAction="#goToRooms" text="Rooms List" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Locations">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToAddLocation" text="Add Location" />
+                                <MenuItem mnemonicParsing="false" onAction="#goToLocations" text="Locations List" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" onAction="#goToBatch">
+                            <graphic>
+                                <Label onMouseClicked="#goToBatch" text="Batch" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#logout" text="Logout" />
+                            </graphic>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <MenuBar fx:id="normalMenuBar" prefHeight="25.0" prefWidth="650.0">
+                    <menus>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyCalendar" text="My Calendar" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToAddMeeting" text="Add Meeting" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToInvites" text="My Invites" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyAccount" text="My Account" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToRooms" text="Rooms" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#logout" text="Logout" />
+                            </graphic>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            <DatePicker fx:id="datePicker" layoutX="34.0" layoutY="297.0" prefHeight="25.0" prefWidth="141.0" promptText="Latest Date" />
+            <TextField fx:id="locationField" layoutX="34.0" layoutY="100.0" prefHeight="37.0" prefWidth="171.0" promptText="Location" />
+            <TextField fx:id="roomField" layoutX="34.0" layoutY="164.0" prefHeight="37.0" prefWidth="171.0" promptText="Room" />
+                <Button fx:id="finishButton" layoutX="225.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#finish" prefHeight="16.0" prefWidth="131.0" text="Finish" />
+            <ComboBox fx:id="timeCombo" layoutX="34.0" layoutY="238.0" prefHeight="25.0" prefWidth="171.0" promptText="Time of Day" />
+            <ComboBox fx:id="locationCombo" layoutX="242.0" layoutY="106.0" prefHeight="25.0" prefWidth="97.0" promptText="Priority" />
+            <ComboBox fx:id="roomCombo" layoutX="242.0" layoutY="176.0" prefHeight="25.0" prefWidth="97.0" promptText="Priority" />
+            <ComboBox fx:id="meetingCombo" layoutX="242.0" layoutY="52.0" prefHeight="25.0" prefWidth="97.0" />
+            <ComboBox fx:id="timePriorityCombo" layoutX="242.0" layoutY="238.0" prefHeight="25.0" prefWidth="97.0" promptText="Priority" />
+            <Label layoutX="34.0" layoutY="52.0" prefHeight="25.0" prefWidth="141.0" text="Meeting Importance" />
+            <Button layoutX="37.0" layoutY="388.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="131.0" text="Back" />
+            <Label fx:id="timeLabel" layoutX="394.0" layoutY="238.0" prefHeight="25.0" prefWidth="233.0" textFill="#eb0404" />
+            <Label fx:id="roomLabel" layoutX="394.0" layoutY="176.0" prefHeight="25.0" prefWidth="233.0" textFill="#eb0404" />
+            <Label fx:id="locationLabel" layoutX="394.0" layoutY="106.0" prefHeight="25.0" prefWidth="233.0" textFill="#eb0404" />
+            <Label fx:id="meetingLabel" layoutX="394.0" layoutY="52.0" prefHeight="25.0" prefWidth="233.0" textFill="#eb0404" />
+            <Label fx:id="dateLabel" layoutX="394.0" layoutY="297.0" prefHeight="25.0" prefWidth="233.0" textFill="#eb0404" />
+            </children>
+        </AnchorPane>
+    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

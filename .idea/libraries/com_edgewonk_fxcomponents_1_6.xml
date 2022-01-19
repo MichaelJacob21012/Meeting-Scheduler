@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.edgewonk:fxcomponents:1.6" type="repository">
+    <properties maven-id="com.edgewonk:fxcomponents:1.6" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/edgewonk/fxcomponents/1.6/fxcomponents-1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

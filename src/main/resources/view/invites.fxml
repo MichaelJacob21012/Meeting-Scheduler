@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" prefWidth="343.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InvitesController">
+    <children>
+        <AnchorPane prefHeight="500.0" prefWidth="650.0">
+            <children>
+                <MenuBar fx:id="adminMenuBar" prefHeight="25.0" prefWidth="637.0">
+                    <menus>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyCalendar" text="My Calendar" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToAddMeeting" text="Add Meeting" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToInvites" text="My Invites" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyAccount" text="My Account" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Accounts">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToAddAccount" text="Add Account" />
+                                <MenuItem mnemonicParsing="false" onAction="#goToAccounts" text="Accounts List" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Rooms">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToAddRoom" text="Add Room" />
+                                <MenuItem mnemonicParsing="false" onAction="#goToRooms" text="Rooms List" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Locations">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToAddLocation" text="Add Location" />
+                                <MenuItem mnemonicParsing="false" onAction="#goToLocations" text="Locations List" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" onAction="#goToBatch">
+                            <graphic>
+                                <Label onMouseClicked="#goToBatch" text="Batch" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#logout" text="Logout" />
+                            </graphic>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <MenuBar fx:id="normalMenuBar" prefHeight="25.0" prefWidth="637.0">
+                    <menus>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyCalendar" text="My Calendar" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToAddMeeting" text="Add Meeting" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToInvites" text="My Invites" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToMyAccount" text="My Account" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#goToRooms" text="Rooms" />
+                            </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                            <graphic>
+                                <Label onMouseClicked="#logout" text="Logout" />
+                            </graphic>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            <TabPane layoutX="-1.0" layoutY="27.0" prefHeight="474.0" prefWidth="637.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Received">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="receivedTable" prefHeight="445.0" prefWidth="637.0">
+                                <columns>
+                                  <TableColumn fx:id="sender" prefWidth="131.0" text="Sender" />
+                                  <TableColumn fx:id="receivedTitle" prefWidth="149.0" text="Title" />
+                                    <TableColumn fx:id="receivedStatus" prefWidth="105.0" text="Status" />
+                                    <TableColumn fx:id="receivedAction" minWidth="1.0" prefWidth="250.0" text="Action" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Sent">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="sentTable" prefHeight="444.0" prefWidth="637.0">
+                                <columns>
+                                    <TableColumn fx:id="recipient" prefWidth="125.0" text="Recipient" />
+                                    <TableColumn fx:id="sentTitle" minWidth="5.0" prefWidth="142.0" text="Title" />
+                                    <TableColumn fx:id="sentStatus" minWidth="0.0" prefWidth="106.0" text="Status" />
+                                    <TableColumn fx:id="attended" minWidth="0.0" prefWidth="103.0" text="Status" />
+                                    <TableColumn fx:id="sentAction" minWidth="0.0" prefWidth="160.0" text="Action" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            </children>
+        </AnchorPane>
+    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
